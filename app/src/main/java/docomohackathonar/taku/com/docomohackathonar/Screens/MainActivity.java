@@ -2,24 +2,39 @@ package docomohackathonar.taku.com.docomohackathonar.Screens;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.R;
 import eu.kudan.kudan.ARAPIKey;
 
 public class MainActivity extends AppCompatActivity {
 
+    @Bind(R.id.show_ar)
+    Button mShowAR;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         permissionsRequest();
+        mShowAR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShowARActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void permissionsRequest() {
