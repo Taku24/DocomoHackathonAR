@@ -28,6 +28,10 @@
         <activity
             android:name=".Screens.ShowARActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Screens.DetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
