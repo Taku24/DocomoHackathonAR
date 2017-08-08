@@ -15,20 +15,11 @@ import docomohackathonar.taku.com.docomohackathonar.R;
 
 public class DetailActivity extends AppCompatActivity {
 
-    @Bind(R.id.finish)
-    Button mFinish;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        mFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
 }
