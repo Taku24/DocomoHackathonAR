@@ -81,13 +81,13 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
                                 dialog.dismiss();
                             }
                         }).show();
-
             }
         });
         mGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(ShowARActivity.this, GalleryActivity.class);
+                startActivity(intent);
             }
         });
     }

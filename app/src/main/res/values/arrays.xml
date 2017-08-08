@@ -25,4 +25,17 @@
         <item>Chinese</item>
         <item>Japanese</item>
     </string-array>
+
+    <string-array name="gallery_title">
+        <item>AIU</item>
+        <item>Yoshinoya</item>
+        <item>Docomo</item>
+    </string-array>
+
+    <string-array name="gallery_content">
+        <item>This is very good Yakiniku</item>
+        <item>Popular Gyuudon</item>
+        <item>Good Mobile Company</item>
+    </string-array>
+
 </resources>
