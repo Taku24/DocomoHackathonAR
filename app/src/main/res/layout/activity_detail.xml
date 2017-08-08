@@ -10,6 +10,22 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="133dp"
+                android:text="Yakiniku"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_big" />
+
+        </RelativeLayout>
+
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
@@ -19,51 +35,49 @@
         android:layout_alignParentStart="true"
         android:layout_below="@id/toolbar">
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <ImageView
+            android:src="@drawable/objective"
+            android:id="@+id/imageView"
+            android:layout_marginTop="10dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="29dp"
-            android:layout_marginEnd="21dp"
-            android:clickable="true"
-            app:fabSize="mini"
-            app:srcCompat="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ratingBar"
-            android:layout_below="@+id/ratingBar"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="21dp" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             style="?android:attr/ratingBarStyleIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
-            android:layout_marginStart="41dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:rating="3" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_alignParentTop="true"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="このお店は安くてとても美味しいです。\n特にカルビは大きくて名物品です！！"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/ratingBar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            app:srcCompat="?android:attr/scrollbarThumbHorizontal" />
+            android:layout_marginBottom="10dp"/>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/textView" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="26dp"
+            android:layout_marginEnd="16dp" />
 
     </RelativeLayout>
 
