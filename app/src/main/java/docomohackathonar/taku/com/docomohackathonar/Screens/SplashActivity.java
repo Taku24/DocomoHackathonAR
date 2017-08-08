@@ -12,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import docomohackathonar.taku.com.docomohackathonar.R;
+import eu.kudan.kudan.ARAPIKey;
 
 /**
  * Created by taku24 on 2017/08/08.
@@ -44,7 +45,7 @@ public class SplashActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.INTERNET, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION}, 111);
 
         } else {
-            startMainActivity();
+            startARActivity();
         }
     }
 
@@ -53,7 +54,9 @@ public class SplashActivity extends AppCompatActivity {
         switch (requestCode) {
             case 111: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    startMainActivity();
+                    ARAPIKey apiKey = ARAPIKey.getInstance();
+                    apiKey.setAPIKey(getString(R.string.api_key));
+                    startARActivity();
                 } else {
                     permissionsNotSelected();
                 }
@@ -75,8 +78,8 @@ public class SplashActivity extends AppCompatActivity {
         noInternet.show();
     }
 
-    private void startMainActivity(){
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+    private void startARActivity(){
+        Intent intent = new Intent(SplashActivity.this, ShowARActivity.class);
         startActivity(intent);
         finish();
     }

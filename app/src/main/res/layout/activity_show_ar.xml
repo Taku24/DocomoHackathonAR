@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/shop_info"
+        android:id="@+id/shopInfo"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:background="@android:color/white"

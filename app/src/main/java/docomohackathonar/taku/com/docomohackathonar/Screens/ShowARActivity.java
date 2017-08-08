@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,7 +18,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.R;
 import eu.kudan.kudan.ARActivity;
-import eu.kudan.kudan.ARImageNode;
 import eu.kudan.kudan.ARImageTrackable;
 import eu.kudan.kudan.ARImageTrackableListener;
 import eu.kudan.kudan.ARImageTracker;
@@ -31,22 +29,20 @@ import eu.kudan.kudan.ARImageTracker;
 public class ShowARActivity extends ARActivity implements ARImageTrackableListener{
 
     @Bind(R.id.detail)
-    Button mdetail;
+    Button mDetail;
 
     @Bind(R.id.ratingBar)
-    RatingBar mratingBar;
+    RatingBar mRatingBar;
 
     @Bind(R.id.textView)
-    TextView mtextView;
+    TextView mTextView;
 
-    @Bind(R.id.shop_info)
+    @Bind(R.id.shopInfo)
     RelativeLayout mShopInfo;
 
-
     private ARImageTrackable mTrackable;
-    private ARImageNode mMarkerImage;
-
     private ImageReader imageReader;
+
     private int displayWidth, displayHeight;
 
     @Override
@@ -55,12 +51,11 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         setContentView(R.layout.activity_show_ar);
         ButterKnife.bind(this);
         mShopInfo.setVisibility(View.GONE);
-        mdetail.setOnClickListener(new View.OnClickListener() {
+        mDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -74,9 +69,6 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
 
         ARImageTracker trackableManager = ARImageTracker.getInstance();
         trackableManager.addTrackable(mTrackable);
-
-        mMarkerImage = new ARImageNode("dos.png");
-        mTrackable.getWorld().addChild(mMarkerImage);
     }
 
     @Override

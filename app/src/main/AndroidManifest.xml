@@ -26,9 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Screens.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Screens.ShowARActivity"
             android:screenOrientation="portrait" />
 
