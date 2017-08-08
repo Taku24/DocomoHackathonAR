@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,13 +37,13 @@
         android:layout_below="@id/toolbar">
 
         <ImageView
-            android:src="@drawable/objective"
             android:id="@+id/imageView"
-            android:layout_marginTop="10dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/objective" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -58,11 +59,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="このお店は安くてとても美味しいです。\n特にカルビは大きくて名物品です！！"
-            android:layout_marginTop="12dp"
             android:layout_below="@+id/ratingBar"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="12dp"
+            android:text="このお店は安くてとても美味しいです。\n特にカルビは大きくて名物品です！！" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
