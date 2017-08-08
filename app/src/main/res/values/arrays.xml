@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="review_content">
+        <item>Very delicious</item>
+        <item>I want to go again</item>
+        <item>The meat was very big.</item>
+        <item>Price is a little expensive, but good</item>
+        <item>:XD</item>
+        <item>I got lost a little, so I reduced points</item>
+        <item>Come to Japan by all means</item>
+    </string-array>
+
+    <string-array name="rating_array">
+        <item>4</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>3</item>
+        <item>2</item>
+        <item>5</item>
+    </string-array>
+</resources>

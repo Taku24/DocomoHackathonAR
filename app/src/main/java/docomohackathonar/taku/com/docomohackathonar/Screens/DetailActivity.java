@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.Adapter.ListAdapter;
@@ -30,18 +32,20 @@ public class DetailActivity extends AppCompatActivity {
     @Bind(R.id.floatingActionButton)
     FloatingActionButton mFloatingActionButton;
 
-    private View view;
+    private ListAdapter mListAdapter;
+    public String mReviewContent;
+    public String mRatingStar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        ListAdapter listAdapter = new ListAdapter();
+        mListAdapter = new ListAdapter(this);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(listAdapter);
+        mRecyclerView.setAdapter(mListAdapter);
 
         mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +56,12 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
+    public void addContent(){
+        mListAdapter.add(mReviewContent, mRatingStar);
+    }
+
     public void showSnackBar(){
-        Snackbar.make(mMainLayout, "投稿しました", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(mMainLayout, "Post Complete", Snackbar.LENGTH_LONG).show();
     }
 
 }
