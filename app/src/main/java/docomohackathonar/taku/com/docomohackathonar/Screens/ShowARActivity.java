@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.nio.ByteBuffer;
 
@@ -26,8 +30,18 @@ import eu.kudan.kudan.ARImageTracker;
 
 public class ShowARActivity extends ARActivity implements ARImageTrackableListener{
 
-    @Bind(R.id.show_info)
-    Button mShowInfo;
+    @Bind(R.id.detail)
+    Button mdetail;
+
+    @Bind(R.id.ratingBar)
+    RatingBar mratingBar;
+
+    @Bind(R.id.textView)
+    TextView mtextView;
+
+    @Bind(R.id.shop_info)
+    RelativeLayout mShopInfo;
+
 
     private ARImageTrackable mTrackable;
     private ARImageNode mMarkerImage;
@@ -40,8 +54,8 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ar);
         ButterKnife.bind(this);
-        mShowInfo.setVisibility(View.GONE);
-        mShowInfo.setOnClickListener(new View.OnClickListener() {
+        mShopInfo.setVisibility(View.GONE);
+        mdetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
@@ -67,8 +81,7 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
 
     @Override
     public void didDetect(ARImageTrackable arImageTrackable) {
-//        getScreenshot();
-        mShowInfo.setVisibility(View.VISIBLE);
+        mShopInfo.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -78,7 +91,7 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
 
     @Override
     public void didLose(ARImageTrackable arImageTrackable) {
-        mShowInfo.setVisibility(View.GONE);
+        mShopInfo.setVisibility(View.GONE);
     }
 
     private void getScreenshot(){
