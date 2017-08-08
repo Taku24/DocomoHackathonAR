@@ -2,14 +2,12 @@ package docomohackathonar.taku.com.docomohackathonar.Screens;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-
-import java.util.ArrayList;
+import android.widget.RelativeLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,11 +21,16 @@ import docomohackathonar.taku.com.docomohackathonar.R;
 
 public class DetailActivity extends AppCompatActivity {
 
+    @Bind(R.id.mainLayout)
+    RelativeLayout mMainLayout;
+
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
 
     @Bind(R.id.floatingActionButton)
     FloatingActionButton mFloatingActionButton;
+
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,10 @@ public class DetailActivity extends AppCompatActivity {
                 dialog.show(getSupportFragmentManager(), "0");
             }
         });
+    }
+
+    public void showSnackBar(){
+        Snackbar.make(mMainLayout, "投稿しました", Snackbar.LENGTH_LONG).show();
     }
 
 }

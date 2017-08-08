@@ -56,6 +56,7 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
                 startActivity(intent);
+                mShopInfo.setVisibility(View.INVISIBLE);
             }
         });
     }

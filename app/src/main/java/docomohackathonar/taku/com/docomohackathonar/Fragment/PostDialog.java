@@ -11,6 +11,7 @@ import android.widget.Button;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.R;
+import docomohackathonar.taku.com.docomohackathonar.Screens.DetailActivity;
 
 /**
  * Created by taku24 on 2017/08/08.
@@ -38,6 +39,8 @@ public class PostDialog extends DialogFragment {
         mPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DetailActivity activity = (DetailActivity) getActivity();
+                activity.showSnackBar();
                 dismiss();
             }
         });
