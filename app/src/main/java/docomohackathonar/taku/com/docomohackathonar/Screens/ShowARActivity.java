@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -60,7 +59,6 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -74,9 +72,6 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
 
         ARImageTracker trackableManager = ARImageTracker.getInstance();
         trackableManager.addTrackable(mTrackable);
-
-        mMarkerImage = new ARImageNode("dos.png");
-        mTrackable.getWorld().addChild(mMarkerImage);
     }
 
     @Override
