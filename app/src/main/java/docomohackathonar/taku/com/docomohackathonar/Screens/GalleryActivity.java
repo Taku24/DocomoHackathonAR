@@ -36,7 +36,6 @@ public class GalleryActivity extends AppCompatActivity {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mListAdapter);
-
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
