@@ -1,10 +1,15 @@
 package docomohackathonar.taku.com.docomohackathonar.Screens;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +21,7 @@ import java.nio.ByteBuffer;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import docomohackathonar.taku.com.docomohackathonar.Fragment.ChangeLangDialog;
 import docomohackathonar.taku.com.docomohackathonar.R;
 import eu.kudan.kudan.ARActivity;
 import eu.kudan.kudan.ARImageTrackable;
@@ -30,6 +36,12 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
 
     @Bind(R.id.detail)
     Button mDetail;
+
+    @Bind(R.id.changeLang)
+    Button mChangelang;
+
+    @Bind(R.id.gallery)
+    Button mGallery;
 
     @Bind(R.id.ratingBar)
     RatingBar mRatingBar;
@@ -57,6 +69,25 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
                 startActivity(intent);
                 mShopInfo.setVisibility(View.INVISIBLE);
+            }
+        });
+        mChangelang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(ShowARActivity.this)
+                        .setTitle("Select your Language")
+                        .setSingleChoiceItems(getResources().getStringArray(R.array.lang), 0, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }).show();
+
+            }
+        });
+        mGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
