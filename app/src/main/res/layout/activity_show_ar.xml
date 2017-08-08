@@ -3,24 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Please hold the building"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_x_big" />
+
     <RelativeLayout
         android:id="@+id/shopInfo"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:background="@android:color/white"
-        android:layout_marginEnd="35dp"
-        android:layout_marginTop="178dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true">
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="178dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
             android:text="Yakiniku"
-            android:textSize="20sp" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_x_big" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -36,10 +46,9 @@
             android:id="@+id/detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/textView"
-            android:layout_marginBottom="18dp"
-            android:text="detail" />
+            android:layout_below="@+id/ratingBar"
+            android:layout_centerHorizontal="true"
+            android:text="詳細へ" />
 
     </RelativeLayout>
 

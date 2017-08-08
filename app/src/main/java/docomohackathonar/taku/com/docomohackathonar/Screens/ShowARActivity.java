@@ -50,7 +50,7 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ar);
         ButterKnife.bind(this);
-        mShopInfo.setVisibility(View.GONE);
+//        mShopInfo.setVisibility(View.GONE);
         mDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
