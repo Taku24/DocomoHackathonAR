@@ -18,7 +18,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.R;
 import eu.kudan.kudan.ARActivity;
-import eu.kudan.kudan.ARImageNode;
 import eu.kudan.kudan.ARImageTrackable;
 import eu.kudan.kudan.ARImageTrackableListener;
 import eu.kudan.kudan.ARImageTracker;
@@ -30,22 +29,20 @@ import eu.kudan.kudan.ARImageTracker;
 public class ShowARActivity extends ARActivity implements ARImageTrackableListener{
 
     @Bind(R.id.detail)
-    Button mdetail;
+    Button mDetail;
 
     @Bind(R.id.ratingBar)
-    RatingBar mratingBar;
+    RatingBar mRatingBar;
 
     @Bind(R.id.textView)
-    TextView mtextView;
+    TextView mTextView;
 
-    @Bind(R.id.shop_info)
+    @Bind(R.id.shopInfo)
     RelativeLayout mShopInfo;
 
-
     private ARImageTrackable mTrackable;
-    private ARImageNode mMarkerImage;
-
     private ImageReader imageReader;
+
     private int displayWidth, displayHeight;
 
     @Override
@@ -54,7 +51,7 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         setContentView(R.layout.activity_show_ar);
         ButterKnife.bind(this);
         mShopInfo.setVisibility(View.GONE);
-        mdetail.setOnClickListener(new View.OnClickListener() {
+        mDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
