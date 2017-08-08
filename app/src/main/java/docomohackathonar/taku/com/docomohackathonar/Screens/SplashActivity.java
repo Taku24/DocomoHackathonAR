@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 permissionsRequest();
             }
-        }, 1000);
+        }, 300);
     }
 
     public void permissionsRequest() {

@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:text="レビューを書いてください" />
+        android:text="Write a review please" />
 
     <EditText
         android:id="@+id/editText"
@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:inputType="text" />
 
     <RatingBar
         android:id="@id/ratingBar"
@@ -38,7 +39,7 @@
         android:layout_below="@id/ratingBar"
         android:layout_marginBottom="12dp"
         android:background="@android:color/transparent"
-        android:text="キャンセル"
+        android:text="Cancel"
         android:textSize="@dimen/text_xx_small" />
 
     <Button
@@ -50,7 +51,7 @@
         android:layout_below="@id/ratingBar"
         android:layout_marginBottom="12dp"
         android:background="@android:color/transparent"
-        android:text="投稿"
+        android:text="Post"
         android:textSize="@dimen/text_xx_small" />
 
 

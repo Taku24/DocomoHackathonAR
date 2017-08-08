@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -40,9 +41,10 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="11dp"
             android:src="@drawable/objective" />
 
         <RatingBar
@@ -50,26 +52,35 @@
             style="?android:attr/ratingBarStyleIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:layout_toStartOf="@+id/floatingActionButton"
             android:rating="3" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ratingBar"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="This shop is cheap and very tasty.\n In particular, Calvi is big and is a famous item! !" />
+
+        <TextView
+            android:id="@+id/eventTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="12dp"
-            android:text="このお店は安くてとても美味しいです。\n特にカルビは大きくて名物品です！！" />
+            android:text="Event: Nothing" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
+            android:layout_below="@id/eventTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/textView" />
+            android:layout_height="match_parent" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionButton"

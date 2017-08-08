@@ -1,22 +1,29 @@
 package docomohackathonar.taku.com.docomohackathonar.Fragment;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import docomohackathonar.taku.com.docomohackathonar.R;
+import docomohackathonar.taku.com.docomohackathonar.Screens.DetailActivity;
 
 /**
  * Created by taku24 on 2017/08/08.
  */
 
 public class PostDialog extends DialogFragment {
+
+    @Bind(R.id.editText)
+    EditText mEditContent;
+
+    @Bind(R.id.ratingBar)
+    RatingBar mRating;
 
     @Bind(R.id.post)
     Button mPost;
@@ -38,6 +45,11 @@ public class PostDialog extends DialogFragment {
         mPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DetailActivity activity = (DetailActivity) getActivity();
+                activity.showSnackBar();
+                activity.mReviewContent = mEditContent.getText().toString();
+                activity.mRatingStar = String.valueOf(mRating.getRating());
+                activity.addContent();
                 dismiss();
             }
         });
