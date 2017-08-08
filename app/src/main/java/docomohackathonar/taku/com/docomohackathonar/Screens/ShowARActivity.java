@@ -21,7 +21,6 @@ import java.nio.ByteBuffer;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import docomohackathonar.taku.com.docomohackathonar.Fragment.ChangeLangDialog;
 import docomohackathonar.taku.com.docomohackathonar.R;
 import eu.kudan.kudan.ARActivity;
 import eu.kudan.kudan.ARImageTrackable;
@@ -62,13 +61,15 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ar);
         ButterKnife.bind(this);
-//        mShopInfo.setVisibility(View.GONE);
+        mShopInfo.setVisibility(View.GONE);
         mDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShowARActivity.this, DetailActivity.class);
                 startActivity(intent);
                 mShopInfo.setVisibility(View.INVISIBLE);
+                mChangelang.setVisibility(View.INVISIBLE);
+                mGallery.setVisibility(View.INVISIBLE);
             }
         });
         mChangelang.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +87,20 @@ public class ShowARActivity extends ARActivity implements ARImageTrackableListen
         mGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mShopInfo.setVisibility(View.INVISIBLE);
+                mChangelang.setVisibility(View.INVISIBLE);
+                mGallery.setVisibility(View.INVISIBLE);
                 Intent intent = new Intent(ShowARActivity.this, GalleryActivity.class);
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        mChangelang.setVisibility(View.VISIBLE);
+        mGallery.setVisibility(View.VISIBLE);
     }
 
     @Override

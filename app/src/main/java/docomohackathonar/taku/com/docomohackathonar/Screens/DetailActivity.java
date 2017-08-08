@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public class DetailActivity extends AppCompatActivity {
 
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
+    @Bind(R.id.back)
+    ImageView mBack;
 
     @Bind(R.id.floatingActionButton)
     FloatingActionButton mFloatingActionButton;
@@ -52,6 +56,13 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 PostDialog dialog = new PostDialog();
                 dialog.show(getSupportFragmentManager(), "0");
+            }
+        });
+
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
