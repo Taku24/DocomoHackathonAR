@@ -3,15 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/show_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="39dp"
-        android:layout_marginEnd="25dp"
-        android:text="@string/show" />
+    <RelativeLayout
+        android:id="@+id/shop_info"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:background="@android:color/white"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="178dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:text="Yakiniku"
+            android:textSize="20sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:rating="3" />
+
+        <Button
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginBottom="18dp"
+            android:text="detail" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
